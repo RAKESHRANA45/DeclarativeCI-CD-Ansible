@@ -12,7 +12,7 @@ pipeline {
     }
 
   environment {
-    SONAR_HOME = "${tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}"
+    SONAR_HOME = "${tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}"
     DOCKER_TAG = DockerTag()	  
   }  
   stages {
