@@ -89,6 +89,6 @@ pipeline {
 //        // Above command used to run the playbook with specified tags mentioned in the tags section.	
 // 	 sh 'sudo docker ps '
 //         }
-//       }	  	  
+      }	  	  
   }
 }   
