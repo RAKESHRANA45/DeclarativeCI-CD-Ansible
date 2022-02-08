@@ -12,9 +12,9 @@ pipeline {
       maven 'Maven'
       jdk 'JAVA_HOME'
     }
-  options { 
-    timestamps () 
-    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '10', numToKeepStr: '5')	
+//   options { 
+//     timestamps () 
+//     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '10', numToKeepStr: '5')	
 // numToKeepStr - Max # of builds to keep
 // daysToKeepStr - Days to keep builds
 // artifactDaysToKeepStr - Days to keep artifacts
