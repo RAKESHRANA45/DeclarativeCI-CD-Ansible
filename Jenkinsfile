@@ -79,7 +79,7 @@ pipeline {
      steps{  
          script {
                  sh 'sudo docker tag myrepo:v${BUILD_NUMBER} ${env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/myrepo:v${BUILD_NUMBER}'
-                sh "sudo docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}"
+                sh "sudo docker push ${env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/myrepo:v${BUILD_NUMBER}"
          }
         }
       }
