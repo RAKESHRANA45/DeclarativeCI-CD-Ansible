@@ -69,7 +69,8 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh 'sudo docker build -t "${IMAGE_REPO_NAME}:${IMAGE_TAG}"'
+          sh 'sudo docker build -t myrepo:v${BUILD_NUMBER} .'
+	        sh 'sudo docker tag myrepo:v${BUILD_NUMBER} ${env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/myrepo:v${BUILD_NUMBER}'
         }
       }
     }
