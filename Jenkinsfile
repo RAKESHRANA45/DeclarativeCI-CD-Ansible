@@ -70,7 +70,6 @@ pipeline {
       steps{
         script {
           sh 'sudo docker build -t myrepo:v${BUILD_NUMBER} .'
-	        sh 'sudo docker tag myrepo:v${BUILD_NUMBER} ${env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/myrepo:v${BUILD_NUMBER}'
         }
       }
     }
@@ -79,7 +78,7 @@ pipeline {
     stage('Pushing to ECR') {
      steps{  
          script {
-                sh "sudo docker tag ${IMAGE_REPO_NAME}:${IMAGE_TAG} ${REPOSITORY_URI}:$IMAGE_TAG"
+                 sh 'sudo docker tag myrepo:v${BUILD_NUMBER} ${env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/myrepo:v${BUILD_NUMBER}'
                 sh "sudo docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}"
          }
         }
