@@ -44,7 +44,7 @@ pipeline {
         AWS_ACCOUNT_ID="754733740943"
         AWS_DEFAULT_REGION="us-east-1" 
         IMAGE_REPO_NAME="Rakesh"
-        IMAGE_TAG="Rana"
+        IMAGE_TAG="rana"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
    
