@@ -78,8 +78,9 @@ pipeline {
     stage('Pushing to ECR') {
      steps{  
          script {
-                 sh 'sudo docker tag myrepo:v${BUILD_NUMBER} ${env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/rakesh:v${BUILD_NUMBER}'
-                sh "sudo docker push ${env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/rakesh:v${BUILD_NUMBER}"
+                sh "aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 754733740943.dkr.ecr.us-east-1.amazonaws.com"
+                sh "sudo docker tag myrepo:v${BUILD_NUMBER} 754733740943.dkr.ecr.us-east-1.amazonaws.com/hello-world:v${BUILD_NUMBER}"
+                sh "sudo docker push 754733740943.dkr.ecr.us-east-1.amazonaws.com/hello-world:v${BUILD_NUMBER}"
          }
         }
       }
